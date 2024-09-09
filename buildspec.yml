@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Docker version:"
+      - docker --version
+      - echo "Building the application"
+      - docker build -t repo .
+  post_build:
+    commands:
+      - echo Build completed successfully!
+artifacts:
+  files:
+    - '**/*'
